@@ -52,5 +52,13 @@ pipeline {
         }
       }
     }
+
+    stage('Kubernetes Deploy') {
+      steps {
+        sh '''
+          kubectl set image deployment/myapp myapp=$DOCKER_IMAGE
+        '''
+      }
+    }
   }
 }
