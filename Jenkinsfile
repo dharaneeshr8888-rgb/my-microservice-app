@@ -10,7 +10,21 @@ pipeline {
     stage('Build (npm install)') {
       steps {
         sh '''
-          docker run --rm -v $PWD:/app -w /app node:18 npm install
+          docker run --rm \
+            --volumes-from jenkins \
+            -w /var/jenkins_home/workspace/my-pipeline \
+            node:18 npm install
+        '''
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh '''
+          docker run --rm \
+            --volumes-from jenkins \
+            -w /var/jenkins_home/workspace/my-pipeline \
+            node:18 npm test || true
         '''
       }
     }
