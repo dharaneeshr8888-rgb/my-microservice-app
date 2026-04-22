@@ -11,6 +11,7 @@ pipeline {
       steps {
         sh '''
           docker run --rm \
+            --dns 8.8.8.8 --dns 8.8.4.4 \
             --volumes-from jenkins \
             -w /var/jenkins_home/workspace/my-pipeline \
             node:18 npm install
@@ -22,6 +23,7 @@ pipeline {
       steps {
         sh '''
           docker run --rm \
+            --dns 8.8.8.8 --dns 8.8.4.4 \
             --volumes-from jenkins \
             -w /var/jenkins_home/workspace/my-pipeline \
             node:18 npm test || true
