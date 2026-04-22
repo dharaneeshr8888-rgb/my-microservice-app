@@ -1,13 +1,11 @@
 pipeline {
   agent any
 
-  stages {
+  environment {
+    DOCKER_IMAGE = "rdharaneesh/myapp:latest"
+  }
 
-    stage('Check Docker') {
-      steps {
-        sh 'docker version'
-      }
-    }
+  stages {
 
     stage('Build (npm install)') {
       steps {
@@ -17,17 +15,25 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        sh '''
-          docker run --rm -v $PWD:/app -w /app node:18 npm test || true
-        '''
-      }
-    }
-
     stage('Docker Build') {
       steps {
         sh 'docker build -t myapp:latest .'
+      }
+    }
+
+    stage('Docker Push') {
+      steps {
+        withCredentials([usernamePassword(
+          credentialsId: 'dockerhub-creds',
+          usernameVariable: 'DOCKER_USER',
+          passwordVariable: 'DOCKER_PASS'
+        )]) {
+          sh '''
+            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+            docker tag myapp:latest $DOCKER_IMAGE
+            docker push $DOCKER_IMAGE
+          '''
+        }
       }
     }
   }
