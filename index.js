@@ -140,7 +140,7 @@ app.get('/', (req, res) => {
         <div class="badge">Running Successfully</div>
         <h1>Microservice Dashboard</h1>
         <p class="subtitle">
-          A simple microservice application deployed with Jenkins, Docker, Kubernetes, Prometheus, and Grafana.
+          A simple and easy microservice application deployed with Jenkins, Docker, Kubernetes, Prometheus, and Grafana.
         </p>
 
         <div class="grid">
