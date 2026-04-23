@@ -158,7 +158,7 @@ app.get('/', (req, res) => {
           </div>
           <div class="box">
             <h3>Monitoring</h3>
-            <p>Prometheus collects metrics and Grafana visualizes them using dashboards.</p>
+            <p>Prometheus collects metrics, and Grafana visualizes them using dashboards.</p>
           </div>
         </div>
 
