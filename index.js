@@ -180,7 +180,6 @@ app.get('/metrics', async (req, res) => {
   res.set('Content-Type', client.register.contentType);
   res.end(await client.register.metrics());
 });
-
 app.listen(port, '0.0.0.0', () => {
-  console.log(\`Server running on port \${port}\`);
+  console.log(`Server running on port ${port}`);
 });
