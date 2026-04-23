@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Microservice App</title>
+      <title>Microservice Apps</title>
       <style>
         * {
           margin: 0;
