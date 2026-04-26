@@ -157,7 +157,7 @@ app.get('/', (req, res) => {
             <p>The service runs in your Minikube cluster and is exposed using a NodePort service.</p>
           </div>
           <div class="box">
-            <h3>Monitoring</h3>
+            <h3>Monitoringk </h3>
             <p>Prometheus collects metrics, and Grafana visualizes them using dashboards.</p>
           </div>
         </div>
