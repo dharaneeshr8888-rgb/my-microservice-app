@@ -140,7 +140,7 @@ app.get('/', (req, res) => {
         <div class="badge">Running Successfully</div>
         <h1>Microservice Dashboard</h1>
         <p class="subtitle">
-          A simple and easy microservice application deployed with Jenkins, Docker, Kubernetes, Prometheus, and Grafana.
+          A simple and easy microservice application deployed with Jenkins, Docker, Kubernetes, Prometheus, andGrafana.
         </p>
 
         <div class="grid">
@@ -157,7 +157,7 @@ app.get('/', (req, res) => {
             <p>The service runs in your Minikube cluster and is exposed using a NodePort service.</p>
           </div>
           <div class="box">
-            <h3>Monitoringk </h3>
+            <h3>Monitoring </h3>
             <p>Prometheus collects metrics, and Grafana visualizes them using dashboards.</p>
           </div>
         </div>
